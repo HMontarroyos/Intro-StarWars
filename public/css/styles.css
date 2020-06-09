@@ -1,0 +1,131 @@
+@import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
+
+@font-face {
+    font-family: 'stjedise';
+    src: url('stjedise.eot');
+    src: url('stjedise?#iefix') format('embedded-opentype'),
+      url('stjedise.svg#Locaweb-Icons') format('svg'),
+      url('stjedise.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
+
+body {
+  margin: 0;
+  background: #000;
+  overflow: hidden;
+}
+.intro {
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  z-index: 1;
+}
+.intro_texto {
+  font-family: "News Cycle", sans-serif;
+  color: #00bfff;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  opacity: 0;
+}
+
+.historia {
+  position: absolute;
+  top: 80%;
+}
+
+.historia_texto {
+  font-family: "News Cycle", sans-serif;
+  font-weight: 700;
+  color: #ffd700;
+  text-align: justify;
+  letter-spacing: 0.1em;
+  line-height: 1.1em;
+}
+
+.paragrafos {
+  position: absolute;
+  left: 15%;
+  width: 70%;
+  z-index: 1;
+  transform-origin: 50%;
+  transform: perspective(300px) rotateX(20deg);
+}
+
+.botao {
+  font-family: "stjedise", stjedise;
+  color: white;
+  display: inline-block;
+  margin: 10px;
+  padding: 5px;
+  border: 3px solid;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 360px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  transition: 400ms;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* Efeitos botão */
+
+.botao:hover {
+  background-color: #ffd700;
+  box-shadow: inset 0 0 0 5px white;
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
+}
+
+.intro_animacao {
+  animation: intro 2s ease-out 0s;
+}
+.historia_animacao {
+  animation: paragrafos 80s linear 2s;
+}
+
+/* Animação utilizando keyframes graças as classes declaradas acima */
+
+@keyframes intro {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes paragrafos {
+  0% {
+    top: 75%;
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    top: -200%;
+    opacity: 0;
+  }
+}
+
+/*Fundo com as estrelas*/
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
